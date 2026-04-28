@@ -225,6 +225,10 @@ async function getDashboardPayload() {
   });
 }
 
+app.get('/', (_request, response) => {
+  response.json({ status: 'ok', message: 'ASMDA Backend API is running.', docs: '/api-docs' });
+});
+
 app.get('/api/health', async (_request, response) => {
   const databaseStatus = await getDatabaseStatus();
 
